@@ -1,0 +1,63 @@
+{
+	"info": {
+		"_postman_id": "82e21777-b0dd-4b04-b2bf-a953270dcd09",
+		"name": "Encrypt-Postman-Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22919459"
+	},
+	"item": [
+		{
+			"name": "/api/encrypt",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Alice Smith\",\r\n    \"phoneNum\": \"+1-555-1234\",\r\n    \"email\": \"alice.smith@example.com\",\r\n    \"addressLine1\": \"123 Maple Street\",\r\n    \"addressLine2\": \"Apt 4B\",\r\n    \"city\": \"Springfield\",\r\n    \"pincode\": 12345,\r\n    \"aadhar\": \"123456789101\",\r\n    \"pan\": \"ABCDE1234F\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8097/api/encrypt",
+					"host": [
+						"localhost"
+					],
+					"port": "8097",
+					"path": [
+						"api",
+						"encrypt"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					"pm.test(\"Status code is 200\", function () {\r",
+					"    pm.response.to.have.status(200);\r",
+					"});\r",
+					""
+				]
+			}
+		}
+	]
+}
