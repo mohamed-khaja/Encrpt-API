@@ -8,14 +8,10 @@ import com.rest.encrypt.model.EncryptModel;
 
 @Service
 public class EncryptJSON {
-
-    EncryptModel encryptedModel;
-
     @Value("${jasypt.encryptor.password}")
     String secret;
-
+    
     public EncryptModel encrypt(EncryptModel model) {
-
         BasicTextEncryptor textEncrypt = new BasicTextEncryptor();
         textEncrypt.setPassword("khaja-encrypt");
         model.setAddressLine1(textEncrypt.encrypt(model.getAddressLine1()));
