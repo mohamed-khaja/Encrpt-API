@@ -17,7 +17,6 @@ public class EncryptJSON {
     public EncryptModel encrypt(EncryptModel model) {
 
         BasicTextEncryptor textEncrypt = new BasicTextEncryptor();
-        System.out.println(secret);
         textEncrypt.setPassword("khaja-encrypt");
         model.setAddressLine1(textEncrypt.encrypt(model.getAddressLine1()));
         model.setAadhar(textEncrypt.encrypt(model.getAadhar()));
